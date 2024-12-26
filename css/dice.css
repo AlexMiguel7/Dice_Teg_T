@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Maven+Pro:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    border: 0;
+    outline: 0;    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--body-bg);
+    /* background: var(--body-bg-gradient); *//*--body-fondo*/
+    flex-direction: column;
+    font-size: 16px;
+    font-family: "Roboto", "Segoe UI", "Tahoma", "Helvetica", sans-serif;
+}
+
+.container {
+    /*  display: grid;
+    place-items: center;
+    width: 250px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    /* width: 700px; */
+
+    background: var(--container-bg); /*-container-bg*/
+    padding: 40px 0;
+    border-radius: 1.5rem;
+    border: 0.1rem solid var(--border-gray);
+    /* box-shadow: 0px 0px 0.5rem 0.1rem var(--shadow-b-02); */
+}
+
+/* NEW 5.4.06*/
+.battle-section {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.attack-section {
+    margin: -0.6rem 0 1rem;
+}
+
+.contenedor-dados-ataque, .contenedor-dados-defensa{
+    display:flex;
+    justify-content: center;
+    margin: 0 1rem;
+}
+
+/* Nuevo apartado para Iconos */
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;/* Espacio entre el ícono y el texto */
+}
+
+.icono {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;/* Asegura que el icono se mantenga correctamente en proporción */
+    filter: drop-shadow(0px 0px 0.1rem var(--shadow-b-02)); /*--box-shadow*/
+}
+
+/* ####################################################################################### */
+/* Dado general */
+.dice.std .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    border: 5px solid var(--face-border);
+    background: var(--std-face-background);
+}
+
+.dice.win .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    border: 5px solid var(--win-face-border);
+    background: var(--win-face-background);
+}
+
+.dice.tie .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    border: 5px solid var(--tie-face-border);
+    background: var(--tie-face-background);
+}
+
+.dice.lose .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    border: 5px solid var(--lose-face-border);
+    background: var(--lose-face-background);
+}
+
+/* ####################################################################################### */
+.dice {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+    /* margin: 30px; */
+    margin: 2.2rem 1.5rem;
+}
+
+/* @keyframes rolling{
+    50%{
+        transform: rotateX(455deg) rotateY(455deg);
+    }
+} */
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid var(--face-border); /*--dado standar*/
+    border-radius: 20px;
+    background: var(--face-background); /*--dado standar*/
+    transform-style: preserve-3d;
+    box-shadow: 0 0 1rem 2px var(--shadow-b-01); /*--box-shadow*/
+}
+
+.face::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: var(--face-border);
+    transform: translateZ(-1px);
+}
+
+.face::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: var(--face-valor);
+    border-radius: 50%;
+}
+
+.front {
+    transform: translateZ(50px);
+}
+
+.back {
+    transform: rotateX(180deg) translateZ(50px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.front::after {
+    width: 30px;
+    height: 30px;
+    background: var(--face-valor);
+    margin: -15px 0 0 -15px;
+}
+
+.back::after {
+    margin: -35px 0 0 -30px;
+    box-shadow: 40px 0, 0 25px, 40px 25px, 0 50px, 40px 50px;
+}
+
+.top::after {
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 40px;
+}
+
+.bottom::after {
+    margin: -36px 0 0 -36px;
+    box-shadow: 26px 26px, 52px 52px, 52px 0, 0 52px;
+}
+
+.right::after {
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 0, 0 40px, 40px 40px;
+}
+
+.left::after {
+    margin: -35px 0 0 -35px;
+    box-shadow: 25px 25px, 50px 50px;
+}
+
+/* button Tirar Dados */
+.roll {
+    color: var(--primary-color); /*--btn-base*/
+    margin-top: 1rem;  /* act. 5.4.06*/
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 8rem;
+    border: 0.17rem solid var(--primary-color); /*--btn-base*/
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0px 0px 0.3rem var(--shadow-b-01); /*--box-shadow*/
+    background: var(--btn-bg-gradient);
+}
+
+.roll:hover {
+    color: var(--text-withe); /*--txt-ww*/
+    /* background: var(--primary-color); */ /*--btn-base*/
+    background: linear-gradient(var(--primary-color),var(--primary-color));
+    /* box-shadow: inset 0 0 10px var(--shadow-inset-05), 0 0 10px var(--shadow-inset-04);
+    outline-offset: 80px; */
+    text-shadow: 0px 0px 6px var(--shadow-w-10);
+}
+
+.roll:active {
+    transform: scale(0.90); /* Hace que el botón parezca más pequeño al presionarlo */
+    box-shadow: 0 0 5px var(--shadow-b-03); /* --btn-shadow */
+    opacity: 0.9; /* Reduce ligeramente la opacidad */
+}
+
+/* +- botones*/
+/* NEW 5.4.06*/
+.dice-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn-addremove {
+    color: var(--primary-color); /*-btn-base*/
+    /* align-items: baseline; */  /*No funciona por display: block*/
+    margin-top: 4px;
+    padding: 2px 2px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 8rem;
+    border: 0.17rem solid var(--primary-color); /*-btn-base*/
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    background: var(--btn-bg-gradient);
+    box-shadow: 0px 0px 0.3rem var(--shadow-w-03); /*--btn-shadow*/
+
+}
+
+.btn-addremove:hover {
+    color: var(--text-withe); /*--txt-ww*/
+    background: linear-gradient(var(--primary-color),var(--primary-color));
+    background: var(--primary-color); /*-btn-base*/
+    /* box-shadow: inset 0 0 10px 
+    var(--shadow-inset-05), 0 0 10px 
+    var(--shadow-inset-04);
+    outline-offset: 80px; */
+    text-shadow: 0px 0px 6px var(--shadow-w-10);
+}
+
+.btn-addremove:active {
+    transform: scale(0.90);
+    box-shadow: 0 0 5px var(--shadow-w-03); /* --btn-shadow */
+    opacity: 0.9;
+}
+
+/* NEW 5.4.06*/
+.results-section {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Resultados de ejercitos perdidos */
+.resultado {
+    color: var(--text-ppl); /*--txt-color-js*/
+    /* width: 100%; */
+    min-width: 17rem;
+    min-height: 4rem;
+    padding: 12px;
+    text-align: center;
+    overflow: hidden; /* Evita que el contenido crezca fuera del contenedor */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
+    background-color: var(--devolucion-bg); /*--resultado-bg*/
+    border: 1px solid var(--border-gray); /*--resultado-borde */
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0px 0px 0.5rem 0.05rem var(--shadow-b-03) inset; /*--box-shadow-resultado*/
+}
+
+/* NEW 5.4.06*/
+.battle-divider {
+    width: 100%;
+    height: 2px;
+    /* margin: 2rem 0; */
+    position: relative;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--border-gray-light) 20%, 
+        var(--border-gray-light) 80%, 
+        transparent 100%
+    );
+    opacity: 0.5;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Dados TEG</title>
+
+    <link rel="stylesheet" href="./css/dice.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="wrapper">
+            <a href="https://yetem.com/wp-content/uploads/2017/06/TEG-REVANCHA.pdf" target="_blank" rel="noopener noreferrer" class="nav-logo-link">
+                <img src="./assets/icons/teg_logo.png" alt="Logo TEG" class="nav-logo">
+            </a>
+            <!-- Agregar este botón -->
+            <button class="menu-btn" aria-label="Menú de navegación">
+                <img src="./assets/icons/menu_justify_icon.svg" alt="Menú">
+            </button>
+            <nav class="main-nav">
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">Duelo</a></li>
+                    <li><a href="#" class="nav-link">Historial</a></li>
+                    <li><a href="#" class="nav-link">Sorteo</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema">
+                    <img id="sun-icon" src="./assets/icons/sun_icon.svg" alt="Modo claro" style="display: block;">
+                    <img id="moon-icon" src="./assets/icons/moon_icon.svg" alt="Modo oscuro" style="display: none;">
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="battle-section attack-section">
+            <div class="header-section">
+                <img src="./assets/icons/tanque.png" alt="Tanque" class="icono izquierda">
+                <h1>Atacante</h1>
+                <img src="./assets/icons/aeronave.png" alt="Aeronave" class="icono derecha">
+            </div>
+            
+            <div class="contenedor-dados-ataque" role="group" aria-label="Dados del atacante">
+                <div class="dice" role="img" aria-label="Dado">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                </div>
+                <div class="dice" role="img" aria-label="Dado">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                </div>
+                <div class="dice" role="img" aria-label="Dado">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                </div>
+            </div>
+
+            <div class="dice-controls">
+                <button class="btn-addremove" id="quitarDadosAtaque">Quitar dados</button>
+                <button class="btn-addremove" id="agregarDadosAtaque">Agregar dados</button>
+            </div>
+        </section>
+
+        <div class="battle-divider" role="separator" aria-hidden="true"></div> <!-- 5.4.06 -->
+
+        <section class="battle-section defense-section">
+            <div class="header-section">
+                <img src="./assets/icons/bunker.png" alt="Bunker" class="icono">
+                <h1>Defensor</h1>
+                <img src="./assets/icons/artilleria.png" alt="Artillería" class="icono">
+            </div>
+            
+            <div class="contenedor-dados-defensa" role="group" aria-label="Dados del defensor">
+                <div class="dice" role="img" aria-label="Dado">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                </div>
+                <div class="dice" role="img" aria-label="Dado">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                </div>
+                <div class="dice" role="img" aria-label="Dado">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                </div>
+            </div>
+
+            <div class="dice-controls">
+                <button class="btn-addremove" id="quitarDadosDefensa">Quitar dados</button>
+                <button class="btn-addremove" id="agregarDadosDefensa">Agregar dados</button>
+            </div>
+        </section>
+
+        <div class="battle-divider" role="separator" aria-hidden="true"></div> <!-- 5.4.06 -->
+
+        <button class="roll" aria-label="Tirar dados">
+            <h2>Tirar Dados</h2>
+        </button>
+
+        <section class="results-section">
+            <h2 class="resultado" aria-live="polite"></h2>
+        </section>
+    </main>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/rollDiceAttack.js"></script>
+</body>
+</html>

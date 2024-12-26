@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/sorteo.css">
+</head>
+<body>
+    <header>
+        <section class="wrapper">
+            <a href="https://yetem.com/wp-content/uploads/2017/06/TEG-REVANCHA.pdf" target="_blank" rel="noopener noreferrer" class="nav-logo-link">
+                <img src="/assets/icons/teg_logo.png" alt="Logo" class="nav-logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Duelo</a></li>
+                    <li><a href="#">Historial</a></li>
+                    <li><a href="/sorteo.html">Sorteo</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <img id="sun-icon" src="/assets/icons/sun_icon.svg" alt="Sun" style="display: block;">
+                <img id="moon-icon" src="/assets/icons/moon_icon.svg" alt="Moon" style="display: none;">
+                </button>
+            </nav>
+        </section>
+    </header>
+
+    <div class="container-s">
+        <h1>Sorteo</h1>
+
+        <!-- Selección de jugadores -->
+        <section>
+            <h2>Seleccione colores de jugadores:</h2>
+            <div id="color-selection">
+                <label><input type="checkbox" value="Rojo"> Rojo</label>
+                <label><input type="checkbox" value="Amarillo"> Amarillo</label>
+                <label><input type="checkbox" value="Azul"> Azul</label>
+                <label><input type="checkbox" value="Verde"> Verde</label>
+                <label><input type="checkbox" value="Negro"> Negro</label>
+                <label><input type="checkbox" value="Blanco"> Blanco</label>
+            </div>
+        </section>
+
+        <!-- Dados -->
+        <section>
+            <h2>Resultados</h2>
+            <div id="dados-container" class="contenedor-dados"></div>
+        </section>
+
+        <!-- Botones -->
+        <div class="controls">
+            <button id="roll-dice" class="roll">Tirar Dados</button>
+            <button id="reset" class="btn-addremove">Limpiar</button>
+            <button id="tie-break" class="btn-addremove">Desempate</button>
+        </div>
+    </div>
+
+    <script src="./js/sorteo.js"></script>
+</body>
+</html>
